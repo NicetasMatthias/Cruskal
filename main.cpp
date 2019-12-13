@@ -6,27 +6,11 @@
 
 using namespace std;
 
-
-
-
-
-
-
-
-
-
 struct edge
 {
     string root1;
     string root2;
     int weight;
-};
-
-struct root
-{
-    string name;
-    bool check;
-    root(string t){name=t; check= false;}
 };
 
 int find_set(vector <vector <edge> > ws ,string name);
@@ -43,10 +27,7 @@ int main()
     vector <edge> data;
     vector <edge> answer;
     vector <vector <edge> > ws;
-    vector <string> roots;
     cout << "input file name: ";
-    // C:\Users\Nicetas\Documents\Cruskal\in.txt
-    // C:\Users\Nicetas\Desktop\WS\in.txt
     cin >> input_filename;
     ifstream fin;
     fin.open(input_filename);
@@ -70,8 +51,6 @@ int main()
         data.push_back(tmp);
 
     }
-
-
 
     for (size_t i=0; i<data.size()-1; i++)
         for (size_t j=data.size()-1; j>i; j--)
